@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newcastle neighbours claim rock star Damien Jones and pop princess Jade Merriwell are expecting | news.com.au</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #d0021b;
+    --dark: #1a1a1a;
+    --mid: #444;
+    --light: #767676;
+    --border: #e0e0e0;
+    --bg: #f4f4f4;
+    --white: #ffffff;
+    --serif: 'Noto Serif', Georgia, serif;
+    --sans: 'Source Sans 3', Arial, sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: var(--sans);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    background: var(--red);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+  }
+  .top-bar .logo {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+  }
+  .top-bar .logo span { font-weight: 400; }
+  .top-bar-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .top-bar-right a {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.9;
+  }
+  .subscribe-btn {
+    background: white;
+    color: var(--red) !important;
+    padding: 5px 12px;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--white);
+    border-bottom: 3px solid var(--red);
+    padding: 0 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 0;
+  }
+  .nav ul li a {
+    display: block;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .nav ul li a:hover { color: var(--red); }
+  .nav ul li.active a { color: var(--red); border-bottom: 3px solid var(--red); }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    max-width: 780px;
+    margin: 12px auto 0;
+    padding: 0 16px;
+    font-size: 12px;
+    color: var(--light);
+  }
+  .breadcrumb a { color: var(--red); text-decoration: none; }
+  .breadcrumb span { margin: 0 4px; }
+
+  /* MAIN LAYOUT */
+  .page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+    margin-top: 16px;
+  }
+
+  /* ARTICLE */
+  .article {}
+
+  .article-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .article h1 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+
+  .article .deck {
+    font-size: 17px;
+    color: var(--mid);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    border-left: 3px solid var(--red);
+    padding-left: 12px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--light);
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .article-meta .author { font-weight: 700; color: var(--dark); }
+  .article-meta .dot { color: var(--border); }
+
+  .social-share {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+  }
+  .social-share a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+  }
+  .share-fb { background: #1877f2; }
+  .share-x { background: #000; }
+  .share-mail { background: var(--light); }
+
+  /* HERO IMAGE */
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-image .placeholder-text {
+    color: #555;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .hero-image-caption {
+    font-size: 12px;
+    color: var(--light);
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  .hero-image-caption strong { color: var(--dark); }
+
+  /* ARTICLE BODY */
+  .article-body p {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.7;
+    color: #222;
+    margin-bottom: 18px;
+  }
+
+  .article-body .intro {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .article-body h2 {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+    margin: 28px 0 12px;
+    padding-top: 20px;
+    border-top: 2px solid var(--dark);
+  }
+
+  .article-body blockquote {
+    border-left: 4px solid var(--red);
+    margin: 24px 0;
+    padding: 12px 20px;
+    background: #fafafa;
+  }
+  .article-body blockquote p {
+    font-style: italic;
+    color: var(--mid);
+    margin-bottom: 0;
+    font-size: 17px;
+  }
+
+  .article-body .standalone-line {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+
+  .article-body .contact-note {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--light);
+    font-style: italic;
+    margin: 20px 0;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid var(--border);
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    border-top: 3px solid var(--red);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    margin: 28px 0;
+  }
+  .pull-quote p {
+    font-family: var(--serif) !important;
+    font-size: 22px !important;
+    font-style: italic;
+    line-height: 1.4 !important;
+    color: var(--dark) !important;
+    margin-bottom: 8px !important;
+  }
+  .pull-quote cite {
+    font-size: 12px;
+    font-family: var(--sans);
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-style: normal;
+  }
+
+  /* TAGS */
+  .article-tags {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .article-tags h4 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--light);
+    margin-bottom: 10px;
+  }
+  .article-tags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .article-tags .tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .article-tags .tag:hover { background: var(--red); color: white; }
+
+  /* SIDEBAR */
+  .sidebar {}
+
+  .sidebar-module {
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .sidebar-module-header {
+    background: var(--dark);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+  }
+  .sidebar-module-header.red { background: var(--red); }
+
+  .sidebar-story {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+  .sidebar-story:last-child { border-bottom: none; }
+  .sidebar-story:hover .sidebar-story-title { color: var(--red); }
+  .sidebar-story-img {
+    width: 72px;
+    height: 54px;
+    flex-shrink: 0;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #999;
+  }
+  .sidebar-story-title {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--dark);
+  }
+  .sidebar-story-meta {
+    font-size: 11px;
+    color: var(--light);
+    margin-top: 4px;
+  }
+
+  .ad-placeholder {
+    background: #eee;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #aaa;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    font-family: var(--sans);
+  }
+
+  /* MORE FROM */
+  .more-from {
+    margin-top: 40px;
+    border-top: 3px solid var(--dark);
+    padding-top: 16px;
+  }
+  .more-from h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+  .more-from-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .more-from-card {
+    text-decoration: none;
+    color: inherit;
+  }
+  .more-from-card:hover .more-from-card-title { color: var(--red); }
+  .more-from-card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #aaa;
+  }
+  .more-from-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+  .more-from-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--dark);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: #aaa;
+    font-size: 12px;
+    padding: 32px 16px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  footer .footer-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+  }
+  footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin-bottom: 16px;
+  }
+  footer .footer-links a { color: #aaa; text-decoration: none; }
+  footer .footer-links a:hover { color: white; }
+  footer .footer-copy { font-size: 11px; color: #666; }
+
+  @media (max-width: 768px) {
+    .page-wrapper { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .article h1 { font-size: 22px; }
+    .more-from-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="#" class="logo">news<span>.com.au</span></a>
+  <div class="top-bar-right">
+    <a href="#">Sign in</a>
+    <a href="#" class="subscribe-btn">SUBSCRIBE</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <ul>
+    <li><a href="#">National</a></li>
+    <li><a href="#">World</a></li>
+    <li class="active"><a href="#">Entertainment</a></li>
+    <li><a href="#">Lifestyle</a></li>
+    <li><a href="#">Finance</a></li>
+    <li><a href="#">Sport</a></li>
+    <li><a href="#">Technology</a></li>
+    <li><a href="#">Travel</a></li>
+    <li><a href="#">Real Estate</a></li>
+    <li><a href="#">Health</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Home</a><span>›</span>
+  <a href="#">Entertainment</a><span>›</span>
+  <a href="#">Celebrity Life</a>
+</div>
+
+<!-- PAGE -->
+<div class="page-wrapper">
+
+  <!-- ARTICLE -->
+  <article class="article">
+    <div class="article-section-label">Celebrity Life</div>
+
+    <h1>Newcastle neighbours claim rock star Daniel Johns and pop princess Jade Thirlwall are expecting — and the renovations tell the whole story</h1>
+
+    <p class="deck">Sources allege the couple are five to six months along and expecting a girl, as locals say the seaside city is quietly overjoyed</p>
+
+    <div class="article-meta">
+      <span class="author">Staff Writers</span>
+      <span class="dot">•</span>
+      <span>news.com.au</span>
+      <span class="dot">•</span>
+      <span>15 Mar 2026, 9:42am</span>
+      <div class="social-share">
+        <a href="#" class="share-fb" title="Share on Facebook">f</a>
+        <a href="#" class="share-x" title="Share on X">𝕏</a>
+        <a href="#" class="share-mail" title="Share via email">✉</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero-image">
+      <span class="placeholder-text">Image: Daniel Johns and Jade Thirlwall</span>
+    </div>
+    <p class="hero-image-caption"><strong>Damien Jones (centre) pictured with girlfriend Jade Merriwell (left) and what appears to be one of the tradies working on the couple's Newcastle property (right).</strong> Picture: Supplied</p>
+
+    <!-- BODY -->
+    <div class="article-body">
+
+      <p class="intro">It started as renovation gossip. Now it's the rumour Newcastle can't stop talking about.</p>
+
+      <p>Neighbours living near the property being extensively rebuilt for former Silverchair frontman <strong>Daniel Johns</strong> are claiming the rock recluse and his pop star girlfriend <strong>Jade Thirlwall</strong> are expecting their first child together.</p>
+
+      <p>And according to multiple sources, they're around five to six months along.</p>
+
+      <p>The alleged pregnancy comes as locals say the scale of the rebuild — described by one neighbour as "basically a full teardown" — suddenly makes a lot more sense.</p>
+
+      <blockquote><p>"New rooms, completely new layout. But now that we're hearing about the baby, it all adds up."</p></blockquote>
+
+      <h2>The tradie who said too much</h2>
+
+      <p>The rumours gained significant traction last week when a tradesman working on the site allegedly let something slip at a nearby café.</p>
+
+      <p>According to a witness at the scene, the builder was overheard saying the nursery was "the trickiest bit" of the job before apparently realising what he'd revealed.</p>
+
+      <blockquote><p>"He went quiet straight away, like he knew he'd said too much. But everyone at the table had already heard it."</p></blockquote>
+
+      <div class="pull-quote">
+        <p>"They're building a forever home, they're having a baby — Daniel isn't the kind of man to do things by halves."</p>
+        <cite>— Source close to the couple</cite>
+      </div>
+
+      <h2>A girl, sources say</h2>
+
+      <p>Adding fuel to the fire, an insider claiming to be close to the couple alleges the pair are expecting a daughter.</p>
+
+      <blockquote><p>"They've known for a while and they're absolutely over the moon."</p></blockquote>
+
+      <p>Neither party has confirmed or denied the reports.</p>
+
+      <h2>The sighting that started it all</h2>
+
+      <p>The speculation intensified after the couple were spotted together inspecting the property alongside a builder, with witnesses describing the pair as openly affectionate throughout.</p>
+
+      <blockquote><p>"Daniel had his arm around her the whole time. They were holding hands walking through the rooms."</p></blockquote>
+
+      <p>It was during that visit that witnesses say Jade's pregnancy became difficult to ignore.</p>
+
+      <blockquote><p>"There was no hiding it, especially side-on. A proper bump. She looked absolutely amazing — genuinely glowing."</p></blockquote>
+
+      <h2>The ring question</h2>
+
+      <p>With a baby allegedly on the way and a forever home taking shape, speculation has now turned to whether wedding bells could also be on the horizon.</p>
+
+      <p>No ring has been publicly sighted. But sources are hinting there could be more news to come.</p>
+
+      <p>Jade has been conspicuously absent from social media in recent weeks, with no close-up photographs posted since the renovation rumours began circulating — a notable shift for someone who has historically been active online.</p>
+
+      <h2>Newcastle reacts</h2>
+
+      <p>Perhaps the most telling detail in all of this is the reaction from the city itself.</p>
+
+      <p>Newcastle has watched Daniel Johns since his teenage years — through the extraordinary highs of his Silverchair fame and the long, difficult years that followed. The news that he may be entering the happiest chapter of his life has reportedly moved many locals deeply.</p>
+
+      <blockquote><p>"He went through so much. To see him happy — really happy — with someone who clearly loves him and a baby on the way? It's just lovely. Newcastle looks after its own."</p></blockquote>
+
+      <p>Another simply said: <em>"He deserves this."</em></p>
+
+      <div class="contact-note">News.com.au has contacted representatives for both Jade Thirlwall and Daniel Johns for comment.</div>
+
+    </div>
+
+    <!-- TAGS -->
+    <div class="article-tags">
+      <h4>Topics</h4>
+      <div class="tags">
+        <a href="#" class="tag">Celebrity</a>
+        <a href="#" class="tag">Entertainment</a>
+        <a href="#" class="tag">Jade Thirlwall</a>
+        <a href="#" class="tag">Daniel Johns</a>
+        <a href="#" class="tag">Newcastle</a>
+        <a href="#" class="tag">Pregnancy</a>
+        <a href="#" class="tag">Little Mix</a>
+      </div>
+    </div>
+
+    <!-- MORE FROM -->
+    <div class="more-from">
+      <h3>More in Entertainment</h3>
+      <div class="more-from-grid">
+        <a href="#" class="more-from-card">
+          <div class="more-from-card-img">Image</div>
+          <div class="more-from-card-label">Celebrity</div>
+          <div class="more-from-card-title">Little Mix bandmates' suspicious social media silence fuels rumours</div>
+        </a>
+        <a href="#" class="more-from-card">
+          <div class="more-from-card-img">Image</div>
+          <div class="more-from-card-label">Music</div>
+          <div class="more-from-card-title">Silverchair's legacy: How Daniel Johns shaped a generation</div>
+        </a>
+        <a href="#" class="more-from-card">
+          <div class="more-from-card-img">Image</div>
+          <div class="more-from-card-label">Celebrity</div>
+          <div class="more-from-card-title">Inside the Newcastle property market's most talked-about renovation</div>
+        </a>
+        <a href="#" class="more-from-card">
+          <div class="more-from-card-img">Image</div>
+          <div class="more-from-card-label">Celebrity</div>
+          <div class="more-from-card-title">Jade Thirwall's rise: From Little Mix pop star to style icon</div>
+        </a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="ad-placeholder">ADVERTISEMENT</div>
+
+    <div class="sidebar-module">
+      <div class="sidebar-module-header red">Trending Now</div>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">Little Mix singer spotted at Sydney baby boutique sparking fresh rumours</div>
+          <div class="sidebar-story-meta">Entertainment · 2h ago</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">Newcastle locals weigh in: 'We always knew he'd find happiness'</div>
+          <div class="sidebar-story-meta">Entertainment · 4h ago</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">The rock recluse who came back: Daniel Johns' quiet life in Newcastle</div>
+          <div class="sidebar-story-meta">Entertainment · 1d ago</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">Jade Thirlwall goes dark on Instagram — fans connect the dots</div>
+          <div class="sidebar-story-meta">Entertainment · 1d ago</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-module">
+      <div class="sidebar-module-header">Latest in Celebrity</div>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">A-listers descend on Sydney for annual charity gala</div>
+          <div class="sidebar-story-meta">Celebrity · 3h ago</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">Reality TV star announces surprise engagement</div>
+          <div class="sidebar-story-meta">Celebrity · 5h ago</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-story">
+        <div class="sidebar-story-img">Img</div>
+        <div>
+          <div class="sidebar-story-title">Pop duo's world tour dates confirmed — Australia included</div>
+          <div class="sidebar-story-meta">Music · 6h ago</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="ad-placeholder">ADVERTISEMENT</div>
+
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">news.com.au</div>
+  <div class="footer-links">
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Advertise</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Subscription Offers</a>
+    <a href="#">Sitemap</a>
+  </div>
+  <div class="footer-copy">© 2026 News Pty Limited. All times AEDT (GMT +11).</div>
+</footer>
+
+</body>
+</html>
